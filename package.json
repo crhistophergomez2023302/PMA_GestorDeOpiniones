@@ -1,10 +1,12 @@
 {
   "name": "pma_gestordeopiniones",
   "version": "1.0.0",
-  "description": "",
+  "description": "API para el gestor de opiniones",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -13,6 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/crhistophergomez2023302/PMA_GestorDeOpiniones/issues"
   },
@@ -29,6 +32,7 @@
     "mongoose": "^8.12.1",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.9",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   }
