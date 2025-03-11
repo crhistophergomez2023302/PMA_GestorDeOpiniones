@@ -20,3 +20,10 @@ export const userExists = async (uid = " ") => {
         throw new Error("No existe el usuario con el ID proporcionado")
     }
 }
+
+export const categoryExists = async (name = "") => {
+    const existe = await User.findById(name)
+    if(existe){
+        throw new Error(`La categoria ${name} ya existe`)
+    }
+};

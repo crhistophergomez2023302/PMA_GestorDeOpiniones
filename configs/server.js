@@ -8,6 +8,8 @@ import { dbConnection } from "./mongo.js"
 import { swaggerDocs, swaggerUI } from "./Swagger.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
+import categoryRoutes from "../src/category/category.routes.js"
+import createdCategory from "../src/category/category.controller.js"
 import createAdmin from "../src/auth/auth.controller.js"
  
 const middlewares = (app) => {
@@ -35,6 +37,7 @@ const middlewares = (app) => {
 const routes = (app) => {
     app.use("/facebook/v1/auth", authRoutes);
     app.use("/facebook/v1/user", userRoutes);
+    app.use("/facebook/v1/category", categoryRoutes);
     app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 }
  
@@ -52,6 +55,7 @@ export const initServer = () => {
     try{
         middlewares(app)
         createAdmin()
+        createdCategory()
         conectarDB()
         routes(app)
         app.listen(process.env.PORT)

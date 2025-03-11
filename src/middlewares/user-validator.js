@@ -33,7 +33,6 @@ export const loginValidator = [
 
 export const updateUserValidator = [
     validateJWT,
-    hasRoles("USER_ROLE"),
     body("name").optional().isString().withMessage("El nombre debe ser un texto"),
     body("email").optional().isEmail().withMessage("Debe ser un email válido"),
     validarCampos,
