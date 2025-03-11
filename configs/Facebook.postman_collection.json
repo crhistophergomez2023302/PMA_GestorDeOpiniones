@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "ca7fd91a-c983-4332-a132-996169fd8bb3",
+		"name": "Facebook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37642998"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Crhistopher\",\r\n    \"surname\": \"Gomez\",\r\n    \"username\": \"Cryss\",\r\n    \"email\": \"Cryss@gmail.com\",\r\n    \"password\": \"Cryss12@\",\r\n    \"phone\": \"87654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/facebook/v1/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"Cryss@gmail.com\",\r\n    \"password\": \"Cryss12@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/facebook/v1/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NmOWYzMmU4NDE0MmZiMjQ3Zjk5YmIiLCJpYXQiOjE3NDE2NjQyNTQsImV4cCI6MTc0MTY2Nzg1NH0.eiYuRU55dmBa676TKOlczBFTEYKxzwyZ6kohAi6Co6c"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alexander\",\r\n    \"surname\": \"Rojas\",\r\n    \"username\": \"Alex\",\r\n    \"email\": \"Alex@gmail.com\",\r\n    \"password\": \"Alex123@\",\r\n    \"phone\": \"12873465\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/facebook/v1/user/updateUser"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "create category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NmOWQ3ZjQwZmNjZjIzYWY0YWFlZDMiLCJpYXQiOjE3NDE2NjgzMDEsImV4cCI6MTc0MTY3MTkwMX0.UWt6MSZmp991SkZ-qE2sM3aMfdRWLU0m89UehYhT3GI"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Futbol\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/facebook/v1/category/createCategory"
+					},
+					"response": []
+				},
+				{
+					"name": "get categories",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get category by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:3000/facebook/v1/category/67cfbfd99643b677a9f5ae9e"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
